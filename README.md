@@ -8,7 +8,7 @@ A dark, music-studio theme for T3 Code. Charcoal panels, a speaker-grille backgr
 
 ![New thread](images/new-thread.png)
 
-**Sidebar.** A screenshot from T3 Code: the "T3 Code Studio" brand with its speaker icon, chevron arrows, grey thread cards with the play / pause / stop strip, and the open thread's orange edge.
+**Sidebar.** A screenshot from T3 Code: the "T3 Code Studio" brand with its speaker icon, chevron arrows, and grey thread cards with the play / pause / stop strip. Pause is lit orange on idle threads, play green on the running thread under **Working**, and stop red on rows under **Settled**. The open thread has an orange left edge, and the **Snoozed** shelf sits between them.
 
 ![Sidebar](images/sidebar.png)
 
