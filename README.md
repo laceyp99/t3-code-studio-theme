@@ -2,6 +2,22 @@
 
 A dark, music-studio theme for T3 Code. Charcoal panels, a speaker-grille background, and controls borrowed from a recording desk.
 
+## Preview
+
+These images are rendered from the theme's CSS with sample content, not captured from the running app. Spacing and icons in T3 Code will differ slightly, and scrollbars are not shown.
+
+**Conversation and composer.** Grille-mesh background, `INPUT` / `OUTPUT` labels, a rack-unit code block, the piano-key row, the reasoning knob, and the green send button.
+
+![Conversation and composer](images/conversation.png)
+
+**Sidebar.** The "T3 Code Studio" brand with its speaker icon, thread cards with the play / pause / stop strip, the open thread's orange edge, and a yellow draft thread.
+
+![Sidebar](images/sidebar.png)
+
+**Thread details.** The "Sends" knob and the context fader at green, orange (60%+), and red (75%+).
+
+![Thread details](images/details.png)
+
 ## What it changes
 
 - **Sidebar:** grey rounded thread cards with a play / pause / stop strip. Play lights green while a thread is working, pause orange when idle, stop red when settled. Threads with an unsent draft get a yellow tint.
@@ -46,3 +62,7 @@ If you edit `studio.css`, copy its full contents into the `css` field of `studio
 - The theme is CSS only. The transport strip, piano keys, and knob are visual; they do not add new actions.
 - Many rules rely on T3's internal markup. A T3 update can stop individual rules from applying; the rest of the theme keeps working.
 - Dark appearance only.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
