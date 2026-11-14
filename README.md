@@ -4,19 +4,19 @@ A dark, music-studio theme for T3 Code. Charcoal panels, a speaker-grille backgr
 
 ## Preview
 
-These images are rendered from the theme's CSS with sample content, not captured from the running app. Spacing and icons in T3 Code will differ slightly, and scrollbars are not shown.
+**New thread.** A screenshot from T3 Code: the grille-mesh background, the "What should we cook up?" heading, and the composer with its piano-key row, reasoning knob, and green send button.
 
-**Conversation and composer.** Grille-mesh background, `INPUT` / `OUTPUT` labels, a rack-unit code block, the piano-key row, the reasoning knob, and the green send button.
+![New thread](images/new-thread.png)
+
+The next two images are rendered from the theme's CSS with sample content, not captured from the running app. Spacing and icons in T3 Code differ slightly.
+
+**Conversation.** `INPUT` / `OUTPUT` labels with LEDs, a rack-unit code block, the model and reasoning picker, and the fader scrollbar on the right edge. The scrollbar is drawn to match, since the render tool cannot show real scrollbars.
 
 ![Conversation and composer](images/conversation.png)
 
 **Sidebar.** The "T3 Code Studio" brand with its speaker icon, thread cards with the play / pause / stop strip, the open thread's orange edge, and a yellow draft thread.
 
 ![Sidebar](images/sidebar.png)
-
-**Thread details.** The "Sends" knob and the context fader at green, orange (60%+), and red (75%+).
-
-![Thread details](images/details.png)
 
 ## What it changes
 
