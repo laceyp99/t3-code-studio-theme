@@ -8,15 +8,13 @@ A dark, music-studio theme for T3 Code. Charcoal panels, a speaker-grille backgr
 
 ![New thread](images/new-thread.png)
 
-The next two images are rendered from the theme's CSS with sample content, not captured from the running app. Spacing and icons in T3 Code differ slightly.
-
-**Conversation.** `INPUT` / `OUTPUT` labels with LEDs, a rack-unit code block, the model and reasoning picker, and the fader scrollbar on the right edge. The scrollbar is drawn to match, since the render tool cannot show real scrollbars.
-
-![Conversation and composer](images/conversation.png)
-
-**Sidebar.** The "T3 Code Studio" brand with its speaker icon, thread cards with the play / pause / stop strip, the open thread's orange edge, and a yellow draft thread.
+**Sidebar.** A screenshot from T3 Code: the "T3 Code Studio" brand with its speaker icon, chevron arrows, grey thread cards with the play / pause / stop strip, and the open thread's orange edge.
 
 ![Sidebar](images/sidebar.png)
+
+**Conversation.** This image is rendered from the theme's CSS with sample content, not captured from the running app, so spacing and icons differ slightly. `INPUT` / `OUTPUT` labels with LEDs, a rack-unit code block, the model and reasoning picker, and the fader scrollbar on the right edge. The scrollbar is drawn to match, since the render tool cannot show real scrollbars.
+
+![Conversation and composer](images/conversation.png)
 
 ## What it changes
 
