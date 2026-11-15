@@ -67,8 +67,11 @@ const ok = run();
 if (watchMode) {
   console.log("Watching studio.css. Press Ctrl+C to stop.");
   let timer;
-  // Editors often fire several events per save, so wait for them to settle.
-  watch(CSS_FILE, () => {
+  // Watch the folder, not the file: editors that save by replacing the file
+  // would leave a file watcher attached to the old copy on Linux and macOS.
+  // Editors also fire several events per save, so wait for them to settle.
+  watch(ROOT, (_event, filename) => {
+    if (filename && filename !== "studio.css") return;
     clearTimeout(timer);
     timer = setTimeout(run, 200);
   });
