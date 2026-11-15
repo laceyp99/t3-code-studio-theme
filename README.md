@@ -1,8 +1,10 @@
 # T3 Code Studio Theme
 
-A dark, music-studio theme for T3 Code. Charcoal panels, a speaker-grille background, and controls borrowed from a recording desk.
+A dark, music-studio theme for T3 Code. Tape Room's warm brown panels and brass accents, Subtle Moss text and focus colours, a speaker-grille background, and controls borrowed from a recording desk.
 
 ## Preview
+
+These images predate the Tape Room + Subtle Moss palette and off-white piano keys.
 
 **New thread.** A screenshot from T3 Code: the grille-mesh background, the "What should we cook up?" heading, and the composer with its piano-key row, reasoning knob, and green send button.
 
@@ -18,14 +20,14 @@ A dark, music-studio theme for T3 Code. Charcoal panels, a speaker-grille backgr
 
 ## What it changes
 
-- **Sidebar:** grey rounded thread cards with a play / pause / stop strip. Play lights green while a thread is working, pause orange when idle, stop red when settled. Threads with an unsent draft get a yellow tint.
+- **Sidebar:** warm brown rounded thread cards with a play / pause / stop strip. Play lights green while a thread is working, pause brass when idle, stop red when settled. Threads with an unsent draft get a yellow tint.
 - **Brand:** the app title reads "T3 Code Studio" with a small speaker icon, and the back / forward arrows are plain chevrons.
-- **Conversation:** grille-mesh background, grey `INPUT` / `OUTPUT` labels with a small LED, and code blocks styled as rack units.
-- **Composer:** a piano-key bottom row, a knob for the model and reasoning picker, a green send button, and a red stop button while the agent runs.
+- **Conversation:** one subtle, uniform grille layer on the chat canvas, sage `INPUT` / `OUTPUT` labels with a small LED, and code blocks styled as rack units. The composer has no blurred glass backdrop or outer shadow to darken the grille underneath it.
+- **Composer:** a brushed synth-style top panel with T3 branding, vents, screws, and unlabelled USB/DC sockets; off-white piano keys starting on C, with solid brown attachment and selector panels when the composer is wider than 600px (full-width keys with overlapping controls in smaller composers), a brass knob for the model and reasoning picker, a green play triangle for sending, and a red button with a black circle and a pulsing red glow to stop the running agent (glow animation respects reduced motion).
 - **Turn history:** a horizontal tick strip under the thread title.
-- **Thread details:** the context meter is a fader that turns orange at 60% and red at 75%.
+- **Thread details:** the context meter is a fader that turns brass at 60% and red at 75%.
 - **Scrollbars:** a slot with a fader cap.
-- **Terminal:** dark grey background, white text, orange cursor.
+- **Terminal:** warm charcoal background, moss-tinted ivory text, brass cursor.
 
 ## Install
 
@@ -52,7 +54,7 @@ Connected web and desktop clients switch to it.
 | `studio.json` | The importable theme: color palette plus the CSS. |
 | `studio.css` | The same CSS as a separate file, for reading and editing. |
 
-If you edit `studio.css`, copy its full contents into the `css` field of `studio.json` before importing. T3 limits theme CSS to 20,000 characters, which is why the file is minified.
+If you edit `studio.css`, copy its full contents into the `css` field of `studio.json` before importing. T3 limits theme CSS to 20,000 characters, which is why the file is minified. Native CSS nesting shares the theme selector while preserving its specificity.
 
 ## Limits
 
