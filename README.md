@@ -55,7 +55,23 @@ Edit `studio.css`, then run (requires Node.js):
 node scripts/apply-theme.mjs --watch
 ```
 
-On each save it copies `studio.css` into the `css` field of `studio.json`, checks the 20,000-character limit, and runs `t3 theme set`, so the open app updates as you edit. Drop `--watch` to apply once, or use `--no-apply` to only sync and check. Other flags, such as `--base-dir <dir>`, go to `t3 theme set`.
+On each save it copies `studio.css` into the `css` field of `studio.json`, checks the 20,000-character limit, and runs `t3 theme set`, so the open app updates as you edit. Drop `--watch` to apply once, or use `--no-apply` to only sync and check. Other flags, such as `--base-dir <dir>`, go to the local `t3 theme set`.
+
+### Apply on other machines
+
+Add `--remote <host>` (repeatable) to also apply the theme on another machine over SSH, for example one reached through Tailscale:
+
+```
+node scripts/apply-theme.mjs --remote laptop
+```
+
+The script copies `studio.json` into `~/.t3/userdata/themes/` on that host and runs `t3 theme set studio` there. The host needs:
+
+- Key-based SSH login with no password prompt, so `ssh <host> hostname` works on its own. An alias in `~/.ssh/config` keeps the name short.
+- An SSH server. On Windows, enable the built-in **OpenSSH Server**.
+- `t3` on its PATH in SSH sessions, and T3 data in the default `~/.t3` folder.
+
+If one machine fails, the others are still updated and the script exits with an error.
 
 ## Files
 
