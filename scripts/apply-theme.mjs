@@ -8,8 +8,8 @@
 //                                          also apply on an SSH host (repeatable)
 //
 // A remote host needs key-based SSH (no password prompt), `t3` on its PATH,
-// and T3 data in the default ~/.t3 folder. The file is copied into
-// ~/.t3/userdata/themes/ there and applied with `t3 theme set studio`.
+// and an existing ~/.t3/userdata/themes/ folder (not created here). The file
+// is copied into that folder and applied with `t3 theme set studio`.
 //
 // Any other flags (e.g. --base-dir <dir>) are passed through to the local
 // `t3 theme set`.

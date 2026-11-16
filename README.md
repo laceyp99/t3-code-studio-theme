@@ -69,7 +69,8 @@ The script copies `studio.json` into `~/.t3/userdata/themes/` on that host and r
 
 - Key-based SSH login with no password prompt, so `ssh <host> hostname` works on its own. An alias in `~/.ssh/config` keeps the name short.
 - An SSH server. On Windows, enable the built-in **OpenSSH Server**.
-- `t3` on its PATH in SSH sessions, and T3 data in the default `~/.t3` folder.
+- `t3` on its PATH in SSH sessions.
+- An existing `~/.t3/userdata/themes/` folder (the default T3 data location). The script does not create it, so if the folder is missing or T3 keeps its data elsewhere, the copy fails with an `scp` error. Create the folder once on that host to fix it.
 
 If one machine fails, the others are still updated and the script exits with an error.
 
