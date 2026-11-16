@@ -39,13 +39,40 @@ The JSON includes the CSS. There are no fonts, scripts, or remote assets.
 
 ### Set it for a whole environment
 
-Copy `studio.json` into the T3 themes folder (normally `~/.t3/userdata/themes/`) and run:
+With the `t3` CLI on your PATH, run from the repository root:
 
 ```
-t3 theme set studio
+t3 theme set ./studio.json --id studio
 ```
 
-Connected web and desktop clients switch to it.
+This publishes the theme to the T3 themes folder and switches connected web and desktop clients to it.
+
+## Editing the theme
+
+Edit `studio.css`, then run (requires Node.js):
+
+```
+node scripts/apply-theme.mjs --watch
+```
+
+On each save it copies `studio.css` into the `css` field of `studio.json`, checks the 20,000-character limit, and runs `t3 theme set`, so the open app updates as you edit. Drop `--watch` to apply once, or use `--no-apply` to only sync and check. Other flags, such as `--base-dir <dir>`, go to the local `t3 theme set`.
+
+### Apply on other machines
+
+Add `--remote <host>` (repeatable) to also apply the theme on another machine over SSH, for example one reached through Tailscale:
+
+```
+node scripts/apply-theme.mjs --remote laptop
+```
+
+The script copies `studio.json` into `~/.t3/userdata/themes/` on that host and runs `t3 theme set studio` there. The host needs:
+
+- Key-based SSH login with no password prompt, so `ssh <host> hostname` works on its own. An alias in `~/.ssh/config` keeps the name short.
+- An SSH server. On Windows, enable the built-in **OpenSSH Server**.
+- `t3` on its PATH in SSH sessions.
+- An existing `~/.t3/userdata/themes/` folder (the default T3 data location). The script does not create it, so if the folder is missing or T3 keeps its data elsewhere, the copy fails with an `scp` error. Create the folder once on that host to fix it.
+
+If one machine fails, the others are still updated and the script exits with an error.
 
 ## Files
 
@@ -53,8 +80,9 @@ Connected web and desktop clients switch to it.
 | --- | --- |
 | `studio.json` | The importable theme: color palette plus the CSS. |
 | `studio.css` | The same CSS as a separate file, for reading and editing. |
+| `scripts/apply-theme.mjs` | Syncs `studio.css` into `studio.json`, checks it, and applies it with `t3 theme set`. |
 
-If you edit `studio.css`, copy its full contents into the `css` field of `studio.json` before importing. T3 limits theme CSS to 20,000 characters, which is why the file is minified. Native CSS nesting shares the theme selector while preserving its specificity.
+If you edit `studio.css`, sync it into `studio.json` before importing (`node scripts/apply-theme.mjs --no-apply` does this). T3 limits theme CSS to 20,000 characters, which is why the file is minified. Native CSS nesting shares the theme selector while preserving its specificity.
 
 ## Limits
 
