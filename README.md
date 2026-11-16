@@ -4,26 +4,26 @@ A dark, music-studio theme for T3 Code. Tape Room's warm brown panels and brass 
 
 ## Preview
 
-These images predate the Tape Room + Subtle Moss palette and off-white piano keys.
+Screenshots from the current Studio theme in T3 Code Nightly on Windows, using the Tape Room + Subtle Moss palette and off-white piano keys.
 
-**New thread.** A screenshot from T3 Code: the grille-mesh background, the "What should we cook up?" heading, and the composer with its piano-key row, reasoning knob, and green send button.
-
-![New thread](images/new-thread.png)
-
-**Sidebar.** A screenshot from T3 Code: the "T3 Code Studio" brand with its speaker icon, chevron arrows, and grey thread cards with the play / pause / stop strip. Pause is lit orange on idle threads, play green on the running thread under **Working**, and stop red on rows under **Settled**. The open thread has an orange left edge, and the **Snoozed** shelf sits between them.
+**Sidebar.** Native project icon colors, warm brown thread cards, and the play / pause / stop strips. The selected thread has an orange left edge; the unread **Done** thread below it has a green edge. The **Working** and **Settled** shelves appear below the other threads.
 
 ![Sidebar](images/sidebar-shelves.png)
 
-**Conversation.** This image is rendered from the theme's CSS with sample content, not captured from the running app, so spacing and icons differ slightly. `INPUT` / `OUTPUT` labels with LEDs, a rack-unit code block, the model and reasoning picker, and the fader scrollbar on the right edge. The scrollbar is drawn to match, since the render tool cannot show real scrollbars.
+**Wide composer.** Three complete piano octaves end on a full B key beside the model and reasoning controls. The attachment and selector panels cover the keyboard behind them. This capture shows the red stop control while an agent is running; submit and steer controls use a green play triangle. Composers wider than 600px and up to 900px show two complete octaves in the same arrangement.
 
-![Conversation and composer](images/conversation.png)
+![Wide composer with three complete octaves and a red stop control](images/composer-wide.png)
+
+**Condensed composer.** At 600px or less, two full-width octaves sit behind the attachment, model/reasoning, and green play controls, without the surrounding brown control panels.
+
+![Condensed composer with controls over two octaves of piano keys](images/composer-condensed.png)
 
 ## What it changes
 
-- **Sidebar:** warm brown rounded thread cards with a play / pause / stop strip. Play lights green while a thread is working, pause brass when idle, stop red when settled. Threads with an unsent draft get a yellow tint.
+- **Sidebar:** warm brown rounded thread cards with a play / pause / stop strip. Play lights green while a thread is working, pause brass when idle, stop red when settled. Native project icons keep their colors. Done or unread threads get a green left edge; the selected thread gets an orange edge instead. Threads with an unsent draft get a yellow tint.
 - **Brand:** the app title reads "T3 Code Studio" with a small speaker icon, and the back / forward arrows are plain chevrons.
 - **Conversation:** one subtle, uniform grille layer on the chat canvas, sage `INPUT` / `OUTPUT` labels with a small LED, and code blocks styled as rack units. The composer has no blurred glass backdrop or outer shadow to darken the grille underneath it.
-- **Composer:** a brushed synth-style top panel with T3 branding, vents, screws, and unlabelled USB/DC sockets; off-white piano keys starting on C, with solid brown attachment and selector panels when the composer is wider than 600px (full-width keys with overlapping controls in smaller composers), a brass knob for the model and reasoning picker, a green play triangle for sending, and a red button with a black circle and a pulsing red glow to stop the running agent (glow animation respects reduced motion).
+- **Composer:** a brushed synth-style top panel with T3 branding, vents, screws, and unlabelled USB/DC sockets; two or three complete octaves of off-white piano keys starting on C, with solid brown attachment and selector panels when the composer is wider than 600px (full-width keys with overlapping controls in smaller composers), a brass knob for the model and reasoning picker, a green play triangle for sending, and a red button with a black circle and a pulsing red glow to stop the running agent (glow animation respects reduced motion).
 - **Turn history:** a horizontal tick strip under the thread title.
 - **Thread details:** the context meter is a fader that turns brass at 60% and red at 75%.
 - **Scrollbars:** a slot with a fader cap.
