@@ -51,7 +51,7 @@ function sync() {
     throw new Error(`studio.css is ${css.length} characters; T3 allows ${CSS_LIMIT}.`);
   }
   const raw = readFileSync(JSON_FILE, "utf8");
-  const theme = JSON.parse(raw.replace(/^﻿/, ""));
+  const theme = JSON.parse(raw.replace(/^\uFEFF/, ""));
   theme.css = css;
   const eol = raw.includes("\r\n") ? "\r\n" : "\n";
   const next = (JSON.stringify(theme, null, 2) + "\n").replace(/\n/g, eol);
@@ -70,7 +70,11 @@ function applyTheme() {
   if (result.error?.code === "ENOENT") {
     throw new Error("Could not find the t3 CLI on PATH. Import studio.json in Settings > Appearance instead.");
   }
-  if (result.status !== 0) throw new Error(`t3 theme set exited with code ${result.status}.`);
+  if (result.status !== 0) {
+    // On Windows a missing t3 shows up as a cmd error and a non-zero exit, not ENOENT.
+    const hint = win ? " If t3 is not on PATH, import studio.json in Settings > Appearance instead." : "";
+    throw new Error(`t3 theme set exited with code ${result.status}.${hint}`);
+  }
 }
 
 function applyRemote(host) {
