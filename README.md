@@ -28,6 +28,10 @@ Screenshots from the current Studio theme in T3 Code Nightly on Windows, using t
 
 ![Thread header with a numbered bar ruler, a playhead at the right end, and turn buttons at the left](images/arrangement-ruler.png)
 
+**Scrollbar fader.** Vertical scrollbars are a fader slot with level ticks beside it, and the cap moves with the scroll position. This conversation is scrolled 40% of the way down.
+
+<img src="images/scroll-fader.png" alt="Scrollbar drawn as a fader slot with tick marks and a two-tone fader cap 40% of the way down" width="71">
+
 **Usage limits.** Each limit bar is an LED ladder that runs green, amber, then red from left to right. Lit segments show what is left, dark segments what is used, and the brass line is T3's pace marker.
 
 ![Usage limits view with LED ladder meters and brass pace markers](images/usage-led-meters.png)
