@@ -2,7 +2,7 @@
 
 A dark, music-studio theme for T3 Code. Tape Room's warm brown panels and brass accents, Subtle Moss text and focus colours, a speaker-grille background, and controls borrowed from a recording desk.
 
-![A new thread with no project selected: the sidebar's thread cards with transport strips, the bar ruler under the header, and the synth-style composer with piano keys](images/overview.png)
+![A new thread with no project selected: thread cards with transport strips, the Snoozed and Settled shelves, the bar ruler under the header, and the synth-style composer with piano keys](images/overview.png)
 
 ## Preview
 
