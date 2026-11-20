@@ -23,7 +23,8 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const CSS_FILE = join(ROOT, "studio.css");
 const JSON_FILE = join(ROOT, "studio.json");
 const THEME_ID = "studio";
-const CSS_LIMIT = 20_000;
+// T3 refuses to publish a theme file over 32 KiB (ThemeFileTooLargeError).
+const THEME_BYTE_LIMIT = 32_768;
 
 let watchMode = false;
 let apply = true;
@@ -47,16 +48,17 @@ for (let i = 0; i < args.length; i++) {
 
 function sync() {
   const css = readFileSync(CSS_FILE, "utf8");
-  if (css.length > CSS_LIMIT) {
-    throw new Error(`studio.css is ${css.length} characters; T3 allows ${CSS_LIMIT}.`);
-  }
   const raw = readFileSync(JSON_FILE, "utf8");
   const theme = JSON.parse(raw.replace(/^\uFEFF/, ""));
   theme.css = css;
   const eol = raw.includes("\r\n") ? "\r\n" : "\n";
   const next = (JSON.stringify(theme, null, 2) + "\n").replace(/\n/g, eol);
+  const bytes = Buffer.byteLength(next);
+  if (bytes > THEME_BYTE_LIMIT) {
+    throw new Error(`studio.json would be ${bytes} bytes; T3 allows ${THEME_BYTE_LIMIT}.`);
+  }
   if (next !== raw) writeFileSync(JSON_FILE, next);
-  console.log(`Synced studio.css into studio.json (${css.length}/${CSS_LIMIT} characters).`);
+  console.log(`Synced studio.css into studio.json (${bytes}/${THEME_BYTE_LIMIT} bytes).`);
 }
 
 function applyTheme() {

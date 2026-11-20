@@ -55,7 +55,7 @@ Edit `studio.css`, then run (requires Node.js):
 node scripts/apply-theme.mjs --watch
 ```
 
-On each save it copies `studio.css` into the `css` field of `studio.json`, checks the 20,000-character limit, and runs `t3 theme set`, so the open app updates as you edit. Drop `--watch` to apply once, or use `--no-apply` to only sync and check. Other flags, such as `--base-dir <dir>`, go to the local `t3 theme set`.
+On each save it copies `studio.css` into the `css` field of `studio.json`, checks that the theme file stays under T3's 32 KiB limit, and runs `t3 theme set`, so the open app updates as you edit. Drop `--watch` to apply once, or use `--no-apply` to only sync and check. Other flags, such as `--base-dir <dir>`, go to the local `t3 theme set`.
 
 ### Apply on other machines
 
@@ -82,7 +82,7 @@ If one machine fails, the others are still updated and the script exits with an 
 | `studio.css` | The same CSS as a separate file, for reading and editing. |
 | `scripts/apply-theme.mjs` | Syncs `studio.css` into `studio.json`, checks it, and applies it with `t3 theme set`. |
 
-If you edit `studio.css`, sync it into `studio.json` before importing (`node scripts/apply-theme.mjs --no-apply` does this). T3 limits theme CSS to 20,000 characters, which is why the file is minified. Native CSS nesting shares the theme selector while preserving its specificity.
+If you edit `studio.css`, sync it into `studio.json` before importing (`node scripts/apply-theme.mjs --no-apply` does this). T3 refuses theme files over 32 KiB (32,768 bytes), which is why the CSS is minified. Native CSS nesting shares the theme selector while preserving its specificity.
 
 ## Limits
 

@@ -4,7 +4,7 @@ A CSS-only music-studio theme for T3 Code. `studio.css` is the editable styleshe
 
 ## After a theme edit request
 
-1. Make the requested changes to `studio.css`, then run `node scripts/apply-theme.mjs --no-apply`. It syncs the CSS into the `css` field of `studio.json` (preserving the other fields), checks that the JSON parses, and fails if the CSS exceeds **20,000 characters**. Keep the CSS minified to stay within T3's limit.
+1. Make the requested changes to `studio.css`, then run `node scripts/apply-theme.mjs --no-apply`. It syncs the CSS into the `css` field of `studio.json` (preserving the other fields), checks that the JSON parses, and fails if `studio.json` would exceed T3's **32,768-byte** theme file limit. Keep the CSS minified to stay within it.
 2. Run `git diff --check`.
 3. Apply the updated theme to the current T3 environment as part of the edit request. Prefer `t3_theme_read` followed by `t3_theme_set` with `themeId: "studio"` and the theme from `studio.json`. If those tools are unavailable, run this from the repository root:
 
