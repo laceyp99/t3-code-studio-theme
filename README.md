@@ -18,6 +18,22 @@ Screenshots from the current Studio theme in T3 Code Nightly on Windows, using t
 
 ![Condensed composer with controls over two octaves of piano keys](images/composer-condensed.png)
 
+**Playing keys.** While the composer is focused and has text, the keys loop an eighth-note trance riff: a brass melody in the upper octave over a pumping off-beat bass in the lower one. One loop takes 6.96 seconds at 138 BPM.
+
+![Composer keys lighting through one loop of the riff](images/composer-keys.gif)
+
+**Arrangement ruler.** The thread header ends in a numbered bar ruler above the brass line. The white playhead follows how far the conversation is scrolled (here, the bottom of the thread), and the previous / next turn buttons sit at the ruler's left end.
+
+![Thread header with a numbered bar ruler, a playhead at the right end, and turn buttons at the left](images/arrangement-ruler.png)
+
+**Usage limits.** Each limit bar is an LED ladder that runs green, amber, then red from left to right. Lit segments show what is left, dark segments what is used, and the brass line is T3's pace marker.
+
+![Usage limits view with LED ladder meters and brass pace markers](images/usage-led-meters.png)
+
+**Project dropdowns.** The new-thread project picker and the sidebar project filter look like an iPod playlist: an LCD title bar, numbered tracks, a brass bar with ▶ on the highlighted row, and ♪ in place of the current project's number.
+
+<img src="images/project-playlist.png" alt="Project picker styled as a playlist with track numbers and a brass highlighted row" width="360">
+
 ## What it changes
 
 - **Sidebar:** warm brown rounded thread cards with a play / pause / stop strip. Play lights green while a thread is working, pause brass when idle, stop red when settled. Native project icons keep their colors. On hover or keyboard focus, the transport strip is fully replaced by the native snooze and settle actions, which appear as console-style fast-forward (snooze) and stop (settle) buttons, keeping their original tooltips and behavior. Done or unread threads get a green left edge; the selected thread gets an orange edge instead. Threads with an unsent draft get a yellow tint.
