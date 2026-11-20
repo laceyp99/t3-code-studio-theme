@@ -2,6 +2,8 @@
 
 A dark, music-studio theme for T3 Code. Tape Room's warm brown panels and brass accents, Subtle Moss text and focus colours, a speaker-grille background, and controls borrowed from a recording desk.
 
+![A new thread with no project selected: thread cards with transport strips, the Snoozed and Settled shelves, the bar ruler under the header, and the synth-style composer with piano keys](images/overview.png)
+
 ## Preview
 
 Screenshots from the current Studio theme in T3 Code Nightly on Windows, using the Tape Room + Subtle Moss palette and off-white piano keys.
@@ -18,13 +20,35 @@ Screenshots from the current Studio theme in T3 Code Nightly on Windows, using t
 
 ![Condensed composer with controls over two octaves of piano keys](images/composer-condensed.png)
 
+**Playing keys.** While the composer is focused and has text, the keys loop an eighth-note trance riff: a brass melody in the upper octave over a pumping off-beat bass in the lower one. One loop takes 6.96 seconds at 138 BPM.
+
+![Composer keys lighting through one loop of the riff](images/composer-keys.gif)
+
+**Arrangement ruler.** The thread header ends in a numbered bar ruler above the brass line. The white playhead follows how far the conversation is scrolled (here, the bottom of the thread), and the previous / next turn buttons sit at the ruler's left end.
+
+![Thread header with a numbered bar ruler, a playhead at the right end, and turn buttons at the left](images/arrangement-ruler.png)
+
+**Scrollbar fader.** Vertical scrollbars are a fader slot with level ticks beside it, and the cap moves with the scroll position. This conversation is scrolled 40% of the way down.
+
+<img src="images/scroll-fader.png" alt="Scrollbar drawn as a fader slot with tick marks and a two-tone fader cap 40% of the way down" width="71">
+
+**Usage limits.** Each limit bar is an LED ladder that runs green, amber, then red from left to right. Lit segments show what is left, dark segments what is used, and the brass line is T3's pace marker.
+
+![Usage limits view with LED ladder meters and brass pace markers](images/usage-led-meters.png)
+
+**Project dropdowns.** The new-thread project picker and the sidebar project filter look like an iPod playlist: an LCD title bar, numbered tracks, a brass bar with ▶ on the highlighted row, and ♪ in place of the current project's number.
+
+<img src="images/project-playlist.png" alt="Project picker styled as a playlist with track numbers and a brass highlighted row" width="360">
+
 ## What it changes
 
 - **Sidebar:** warm brown rounded thread cards with a play / pause / stop strip. Play lights green while a thread is working, pause brass when idle, stop red when settled. Native project icons keep their colors. On hover or keyboard focus, the transport strip is fully replaced by the native snooze and settle actions, which appear as console-style fast-forward (snooze) and stop (settle) buttons, keeping their original tooltips and behavior. Done or unread threads get a green left edge; the selected thread gets an orange edge instead. Threads with an unsent draft get a yellow tint.
 - **Brand:** the app title reads "T3 Code Studio" with a small speaker icon, and the back / forward arrows are plain chevrons.
 - **Conversation:** one subtle, uniform grille layer on the chat canvas, sage `INPUT` / `OUTPUT` labels with a small LED, and code blocks styled as rack units. The composer has no blurred glass backdrop or outer shadow to darken the grille underneath it.
-- **Composer:** a brushed synth-style top panel with T3 branding, vents, screws, and unlabelled USB/DC sockets; two or three complete octaves of off-white piano keys starting on C, with solid brown attachment and selector panels when the composer is wider than 600px (full-width keys with overlapping controls in smaller composers), a brass knob for the model and reasoning picker, a header LED that turns green with a brass border while focus is inside the composer, a green play triangle for sending, and a red button with a black circle and a pulsing red glow to stop the running agent (glow animation respects reduced motion).
-- **Turn history:** a horizontal tick strip under the thread title.
+- **Composer:** a brushed synth-style top panel with T3 branding, vents, screws, and unlabelled USB/DC sockets; two or three complete octaves of off-white piano keys starting on C, with solid brown attachment and selector panels when the composer is wider than 600px (full-width keys with overlapping controls in smaller composers), a brass knob for the model and reasoning picker, a header LED that turns green with a brass border while focus is inside the composer, a green play triangle for sending, keys that loop an eighth-note trance riff in brass while the focused prompt has text (two A keys an octave apart, held still, with reduced motion), and a red button with a black circle and a pulsing red glow to stop the running agent (glow animation respects reduced motion).
+- **Arrangement ruler:** the thread header ends in a numbered bar ruler with beat ticks above the brass line. A playhead follows how far the conversation is scrolled, and the previous / next turn buttons sit side by side at the ruler's left edge.
+- **Project dropdowns:** the new-thread project picker and the sidebar project filter look like an iPod playlist: a backlit LCD title bar, numbered tracks, a brass bar with ▶ on the highlighted row, ♪ in place of the current project's number, and a plain thin scrollbar instead of the fader.
+- **Usage limits:** each limit bar is an LED ladder. Lit segments show what is left and run green to amber (60%) to red (80%) from left to right, like a DAW meter; used segments stay dark. The pace marker is a brass playhead line.
 - **Thread details:** the context meter is a fader that turns brass at 60% and red at 75%.
 - **Scrollbars:** a slot with a fader cap. Vertical scrollbars have seven small fader ticks to the left of the cap.
 - **Terminal:** warm charcoal background, moss-tinted ivory text, brass cursor.
@@ -55,7 +79,7 @@ Edit `studio.css`, then run (requires Node.js):
 node scripts/apply-theme.mjs --watch
 ```
 
-On each save it copies `studio.css` into the `css` field of `studio.json`, checks the 20,000-character limit, and runs `t3 theme set`, so the open app updates as you edit. Drop `--watch` to apply once, or use `--no-apply` to only sync and check. Other flags, such as `--base-dir <dir>`, go to the local `t3 theme set`.
+On each save it copies `studio.css` into the `css` field of `studio.json`, checks that the theme file stays under T3's 32 KiB limit, and runs `t3 theme set`, so the open app updates as you edit. Drop `--watch` to apply once, or use `--no-apply` to only sync and check. Other flags, such as `--base-dir <dir>`, go to the local `t3 theme set`.
 
 ### Apply on other machines
 
@@ -82,7 +106,7 @@ If one machine fails, the others are still updated and the script exits with an 
 | `studio.css` | The same CSS as a separate file, for reading and editing. |
 | `scripts/apply-theme.mjs` | Syncs `studio.css` into `studio.json`, checks it, and applies it with `t3 theme set`. |
 
-If you edit `studio.css`, sync it into `studio.json` before importing (`node scripts/apply-theme.mjs --no-apply` does this). T3 limits theme CSS to 20,000 characters, which is why the file is minified. Native CSS nesting shares the theme selector while preserving its specificity.
+If you edit `studio.css`, sync it into `studio.json` before importing (`node scripts/apply-theme.mjs --no-apply` does this). T3 refuses theme files over 32 KiB (32,768 bytes), which is why the CSS is minified. Native CSS nesting shares the theme selector while preserving its specificity.
 
 ## Limits
 
