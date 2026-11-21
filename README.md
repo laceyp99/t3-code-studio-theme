@@ -115,6 +115,16 @@ If you edit `studio.css`, sync it into `studio.json` before importing (`node scr
 - Many rules rely on T3's internal markup. A T3 update can stop individual rules from applying; the rest of the theme keeps working.
 - Dark appearance only.
 
+## Troubleshooting
+
+**The piano keys show two A keys an octave apart and never play the riff.** Your OS has reduced motion turned on, and the theme respects it by holding the keys still and stopping the stop button's glow. To get the animation back, turn motion on in your OS settings:
+
+- Windows: Settings > Accessibility > Visual effects > **Animation effects** on. Virtual machines and remote desktop setups often ship with this off.
+- macOS: System Settings > Accessibility > Display > **Reduce motion** off.
+- Linux (GNOME): Settings > Accessibility > **Reduce animation** off.
+
+Restart T3 if the change doesn't apply right away.
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
